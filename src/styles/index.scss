@@ -5,7 +5,25 @@
 }
 
 .chart-container {
+  margin: 20px auto; /* Center the chart horizontally */
+  max-width: 800px; /* Set a maximum width for the chart */
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-evenly;
   margin-top: 20px;
-  border: 1px solid #ddd;
-  padding: 15px;
+
+  button {
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    background-color: #eee;
+    outline: none;
+    border-radius: 5px;
+
+    &.selected {
+      background-color: #ccc;
+    }
+  }
 }

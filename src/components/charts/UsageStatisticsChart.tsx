@@ -26,7 +26,7 @@ const UsageStatisticsChart: React.FC<UsageStatisticsChartProps> = ({
   return (
     <div className="chart-container">
       <h2>Usage Statistics</h2>
-      <BarChart width={500} height={300} data={chartData}>
+      <BarChart width={800} height={500} data={chartData}>
         <XAxis dataKey="platform" />
         <YAxis />
         <Tooltip />

@@ -22,7 +22,7 @@ const UserSatisfactionChart: React.FC<UserSatisfactionChartProps> = ({
   return (
     <div className="chart-container">
       <h2>User Satisfaction</h2>
-      <PieChart width={500} height={300}>
+      <PieChart width={800} height={500}>
         <Pie
           dataKey="count"
           nameKey="rating"

@@ -20,7 +20,7 @@ const ResponseTimesChart: React.FC<ResponseTimesChartProps> = ({ data }) => {
   return (
     <div className="chart-container">
       <h2>Response Times</h2>
-      <LineChart width={500} height={300} data={data.day_wise}>
+      <LineChart width={800} height={500} data={data.day_wise}>
         <XAxis dataKey="date" />
         <YAxis />
         <Tooltip />

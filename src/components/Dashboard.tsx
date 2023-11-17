@@ -1,5 +1,5 @@
 // src/components/Dashboard/Dashboard.tsx
-import React from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "../redux/store";
 import CategoryDistributionChart from "../components/charts/CategoryDistributionChart";
@@ -10,15 +10,56 @@ import "../styles/index.scss";
 
 const Dashboard: React.FC = () => {
   const aiData = useSelector((state: RootState) => state.ai);
+  const [selectedChart, setSelectedChart] = useState<string>(
+    "categoryDistribution"
+  );
+
+  const handleChartSelection = (chartName: string) => {
+    setSelectedChart(chartName);
+  };
 
   return (
     <div>
       <h1>AI Insights Dashboard</h1>
-      <div className="dashboard-container">
-        <CategoryDistributionChart data={aiData.category_distribution} />
-        <ResponseTimesChart data={aiData.response_times} />
-        <UserSatisfactionChart data={aiData.user_satisfaction} />
-        <UsageStatisticsChart data={aiData.usage_statistics} />
+      <div className="button-container">
+        <button
+          onClick={() => handleChartSelection("categoryDistribution")}
+          className={selectedChart === "categoryDistribution" ? "selected" : ""}
+        >
+          Category Distribution
+        </button>
+        <button
+          onClick={() => handleChartSelection("responseTimes")}
+          className={selectedChart === "responseTimes" ? "selected" : ""}
+        >
+          Response Times
+        </button>
+        <button
+          onClick={() => handleChartSelection("userSatisfaction")}
+          className={selectedChart === "userSatisfaction" ? "selected" : ""}
+        >
+          User Satisfaction
+        </button>
+        <button
+          onClick={() => handleChartSelection("usageStatistics")}
+          className={selectedChart === "usageStatistics" ? "selected" : ""}
+        >
+          Usage Statistics
+        </button>
+      </div>
+      <div className="chart-container">
+        {selectedChart === "categoryDistribution" && (
+          <CategoryDistributionChart data={aiData.category_distribution} />
+        )}
+        {selectedChart === "responseTimes" && (
+          <ResponseTimesChart data={aiData.response_times} />
+        )}
+        {selectedChart === "userSatisfaction" && (
+          <UserSatisfactionChart data={aiData.user_satisfaction} />
+        )}
+        {selectedChart === "usageStatistics" && (
+          <UsageStatisticsChart data={aiData.usage_statistics} />
+        )}
       </div>
     </div>
   );
