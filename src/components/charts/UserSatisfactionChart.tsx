@@ -1,6 +1,6 @@
 // src/components/Charts/UserSatisfactionChart.tsx
 import React from "react";
-import { PieChart, Pie, Tooltip, Legend } from "recharts";
+import { PieChart, Pie, Tooltip, Legend, ResponsiveContainer } from "recharts";
 import "../../styles/index.scss";
 
 interface UserSatisfactionChartProps {
@@ -22,17 +22,19 @@ const UserSatisfactionChart: React.FC<UserSatisfactionChartProps> = ({
   return (
     <div className="chart-container">
       <h2>User Satisfaction</h2>
-      <PieChart width={800} height={500}>
-        <Pie
-          dataKey="count"
-          nameKey="rating"
-          data={data.ratings}
-          fill="#8884d8"
-          label
-        />
-        <Tooltip />
-        <Legend />
-      </PieChart>
+      <ResponsiveContainer width="100%" height={400}>
+        <PieChart width={800} height={500}>
+          <Pie
+            dataKey="count"
+            nameKey="rating"
+            data={data.ratings}
+            fill="#8884d8"
+            label
+          />
+          <Tooltip />
+          <Legend />
+        </PieChart>
+      </ResponsiveContainer>
     </div>
   );
 };

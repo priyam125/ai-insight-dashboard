@@ -1,6 +1,6 @@
 // src/components/Charts/UsageStatisticsChart.tsx
 import React from "react";
-import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend } from "recharts";
+import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from "recharts";
 import "../../styles/index.scss";
 
 interface UsageStatisticsChartProps {
@@ -26,13 +26,15 @@ const UsageStatisticsChart: React.FC<UsageStatisticsChartProps> = ({
   return (
     <div className="chart-container">
       <h2>Usage Statistics</h2>
-      <BarChart width={800} height={500} data={chartData}>
-        <XAxis dataKey="platform" />
-        <YAxis />
-        <Tooltip />
-        <Legend />
-        <Bar dataKey="value" fill="#8884d8" />
-      </BarChart>
+      <ResponsiveContainer width="100%" height={400}>
+        <BarChart width={800} height={500} data={chartData}>
+          <XAxis dataKey="platform" />
+          <YAxis />
+          <Tooltip />
+          <Legend />
+          <Bar dataKey="value" fill="#8884d8" />
+        </BarChart>
+      </ResponsiveContainer>
     </div>
   );
 };

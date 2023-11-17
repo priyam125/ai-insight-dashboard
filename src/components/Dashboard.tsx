@@ -19,7 +19,7 @@ const Dashboard: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className="dashboard">
       <h1>AI Insights Dashboard</h1>
       <div className="button-container">
         <button
@@ -47,20 +47,18 @@ const Dashboard: React.FC = () => {
           Usage Statistics
         </button>
       </div>
-      <div className="chart-container">
-        {selectedChart === "categoryDistribution" && (
-          <CategoryDistributionChart data={aiData.category_distribution} />
-        )}
-        {selectedChart === "responseTimes" && (
-          <ResponseTimesChart data={aiData.response_times} />
-        )}
-        {selectedChart === "userSatisfaction" && (
-          <UserSatisfactionChart data={aiData.user_satisfaction} />
-        )}
-        {selectedChart === "usageStatistics" && (
-          <UsageStatisticsChart data={aiData.usage_statistics} />
-        )}
-      </div>
+      {selectedChart === "categoryDistribution" && (
+        <CategoryDistributionChart data={aiData.category_distribution} />
+      )}
+      {selectedChart === "responseTimes" && (
+        <ResponseTimesChart data={aiData.response_times} />
+      )}
+      {selectedChart === "userSatisfaction" && (
+        <UserSatisfactionChart data={aiData.user_satisfaction} />
+      )}
+      {selectedChart === "usageStatistics" && (
+        <UsageStatisticsChart data={aiData.usage_statistics} />
+      )}
     </div>
   );
 };
