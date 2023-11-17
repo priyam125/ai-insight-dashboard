@@ -4,13 +4,14 @@ import { PieChart, Pie, Tooltip, Legend, ResponsiveContainer } from "recharts";
 import "../../styles/index.scss";
 
 interface UserSatisfactionChartProps {
-  data: { ratings?: { rating: number; count: number }[] } | undefined; 
+  data: { ratings?: { rating: number; count: number }[] } | undefined; // Make sure data can be undefined
 }
 
 const UserSatisfactionChart: React.FC<UserSatisfactionChartProps> = ({
   data,
 }) => {
   if (!data || !data.ratings) {
+    // Handle the case when data or ratings is undefined
     return (
       <div className="chart-container">
         <p>No data available</p>

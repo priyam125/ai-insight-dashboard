@@ -1,15 +1,26 @@
 // src/components/Charts/CategoryDistributionChart.tsx
 
 import React from "react";
-import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip, Legend } from "recharts";
+import {
+  ResponsiveContainer,
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  Tooltip,
+  Legend,
+} from "recharts";
 import "../../styles/index.scss";
 
 interface CategoryDistributionChartProps {
-  data: { [category: string]: number } | undefined;
+  data: { [category: string]: number } | undefined; // Make sure data can be undefined
 }
 
-const CategoryDistributionChart: React.FC<CategoryDistributionChartProps> = ({ data }) => {
+const CategoryDistributionChart: React.FC<CategoryDistributionChartProps> = ({
+  data,
+}) => {
   if (!data) {
+    // Handle the case when data or by_platform is undefined
     return (
       <div className="chart-container">
         <p>No data available</p>
@@ -39,4 +50,3 @@ const CategoryDistributionChart: React.FC<CategoryDistributionChartProps> = ({ d
 };
 
 export default CategoryDistributionChart;
-

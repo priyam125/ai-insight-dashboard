@@ -9,10 +9,9 @@ import "./styles/index.scss";
 const App: React.FC = () => {
   const dispatch = useDispatch();
 
-  useEffect(() => {
+  useEffect(() => {                            //fetching data using mock api call
     const fetchData = async () => {
       const data = await fetchAIData();
-      console.log(data);
       dispatch(setAIData(data));
     };
 

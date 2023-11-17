@@ -12,13 +12,14 @@ import {
 import "../../styles/index.scss";
 
 interface UsageStatisticsChartProps {
-  data: { by_platform?: { [platform: string]: number } } | undefined;
+  data: { by_platform?: { [platform: string]: number } } | undefined; // Make sure data can be undefined
 }
 
 const UsageStatisticsChart: React.FC<UsageStatisticsChartProps> = ({
   data,
 }) => {
   if (!data || !data.by_platform) {
+    // Handle the case when data or ratings is undefined
     return (
       <div className="chart-container">
         <p>No data available</p>
