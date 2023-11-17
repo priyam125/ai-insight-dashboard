@@ -32,7 +32,7 @@ const UsageStatisticsChart: React.FC<UsageStatisticsChartProps> = ({
           <YAxis />
           <Tooltip />
           <Legend />
-          <Bar dataKey="value" fill="#8884d8" />
+          <Bar dataKey="value" fill="#16a085" />
         </BarChart>
       </ResponsiveContainer>
     </div>

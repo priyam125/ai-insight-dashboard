@@ -34,7 +34,7 @@ const ResponseTimesChart: React.FC<ResponseTimesChartProps> = ({ data }) => {
           <YAxis />
           <Tooltip />
           <Legend />
-          <Line type="monotone" dataKey="average_time" stroke="#8884d8" />
+          <Line type="monotone" dataKey="average_time" stroke="#16a085" />
         </LineChart>
       </ResponsiveContainer>
     </div>

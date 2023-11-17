@@ -32,7 +32,7 @@ const CategoryDistributionChart: React.FC<CategoryDistributionChartProps> = ({ d
           <YAxis />
           <Tooltip />
           <Legend />
-          <Bar dataKey="value" fill="#8884d8" />
+          <Bar dataKey="value" fill="#16a085" />
         </BarChart>
       </ResponsiveContainer>
     </div>

@@ -28,7 +28,7 @@ const UserSatisfactionChart: React.FC<UserSatisfactionChartProps> = ({
             dataKey="count"
             nameKey="rating"
             data={data.ratings}
-            fill="#8884d8"
+            fill="#16a085"
             label
           />
           <Tooltip />
