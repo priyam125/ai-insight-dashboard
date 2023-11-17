@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { fetchAIData } from "./services/aiService";
 import { setAIData } from "./redux/actions/aiActions";
 import Dashboard from "./components/Dashboard";
+import "./styles/index.scss";
 
 const App: React.FC = () => {
   const dispatch = useDispatch();
