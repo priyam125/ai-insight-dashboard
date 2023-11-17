@@ -14,8 +14,8 @@ code {
 
 .dashboard-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
+  /* align-items: center; */
   padding: 20px;
 }
 

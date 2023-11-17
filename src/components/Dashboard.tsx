@@ -12,12 +12,14 @@ const Dashboard: React.FC = () => {
   const aiData = useSelector((state: RootState) => state.ai);
 
   return (
-    <div className="dashboard-container">
+    <div>
       <h1>AI Insights Dashboard</h1>
-      <CategoryDistributionChart data={aiData.category_distribution} />
-      <ResponseTimesChart data={aiData.response_times} />
-      <UserSatisfactionChart data={aiData.user_satisfaction} />
-      <UsageStatisticsChart data={aiData.usage_statistics} />
+      <div className="dashboard-container">
+        <CategoryDistributionChart data={aiData.category_distribution} />
+        <ResponseTimesChart data={aiData.response_times} />
+        <UserSatisfactionChart data={aiData.user_satisfaction} />
+        <UsageStatisticsChart data={aiData.usage_statistics} />
+      </div>
     </div>
   );
 };
