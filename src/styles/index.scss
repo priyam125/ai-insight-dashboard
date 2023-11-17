@@ -17,6 +17,14 @@ body {
 
 .dashboard {
   width: 45%;
+
+  @media (max-width: 640px) {
+    width: 95%;
+  }
+
+  @media (max-width: 900px) {
+    width: 65%;
+  }
 }
 
 .button-container {
@@ -25,6 +33,8 @@ body {
   margin-top: 20px;
 
   button {
+    flex: 1; /* Make buttons take equal width within the container */
+    margin: 0 5px; /* Add some spacing between buttons */
     padding: 15px;
     cursor: pointer;
     border: none;
@@ -40,6 +50,15 @@ body {
 
     &.selected {
       background-color: #2980b9;
+    }
+  }
+
+  /* Responsive styling */
+  @media (max-width: 640px) {
+    flex-direction: column; /* Stack buttons vertically on small screens */
+    align-items: stretch; /* Stretch buttons to fill the container vertically */
+    button {
+      margin: 5px 0; /* Add some spacing between buttons vertically */
     }
   }
 }
