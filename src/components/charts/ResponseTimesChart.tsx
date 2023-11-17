@@ -12,12 +12,11 @@ import {
 import "../../styles/index.scss";
 
 interface ResponseTimesChartProps {
-  data: { day_wise?: { date: string; average_time: number }[] } | undefined; // Make sure data can be undefined
+  data: { day_wise?: { date: string; average_time: number }[] } | undefined;
 }
 
 const ResponseTimesChart: React.FC<ResponseTimesChartProps> = ({ data }) => {
   if (!data || !data.day_wise) {
-    // Handle the case when data or day_wise is undefined
     return (
       <div className="chart-container">
         <p>No data available</p>

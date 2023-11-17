@@ -1,17 +1,24 @@
 // src/components/Charts/UsageStatisticsChart.tsx
 import React from "react";
-import { BarChart, Bar, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from "recharts";
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  Tooltip,
+  Legend,
+  ResponsiveContainer,
+} from "recharts";
 import "../../styles/index.scss";
 
 interface UsageStatisticsChartProps {
-  data: { by_platform?: { [platform: string]: number } } | undefined; // Make sure data can be undefined
+  data: { by_platform?: { [platform: string]: number } } | undefined;
 }
 
 const UsageStatisticsChart: React.FC<UsageStatisticsChartProps> = ({
   data,
 }) => {
   if (!data || !data.by_platform) {
-    // Handle the case when data or by_platform is undefined
     return (
       <div className="chart-container">
         <p>No data available</p>

@@ -26,7 +26,6 @@ const CategoryDistributionChart: React.FC<CategoryDistributionChartProps> = ({ d
     <div className="chart-container">
       <h2>Category Distribution</h2>
       <ResponsiveContainer width="100%" height={400}>
-        {/* Adjust the height to your preferred value, for example, 400 */}
         <BarChart data={chartData}>
           <XAxis dataKey="category" />
           <YAxis />
