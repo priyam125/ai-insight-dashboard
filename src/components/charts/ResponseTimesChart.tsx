@@ -4,10 +4,19 @@ import { LineChart, Line, XAxis, YAxis, Tooltip, Legend } from "recharts";
 import "../../styles/index.scss";
 
 interface ResponseTimesChartProps {
-  data: { day_wise: { date: string; average_time: number }[] };
+  data: { day_wise?: { date: string; average_time: number }[] } | undefined; // Make sure data can be undefined
 }
 
 const ResponseTimesChart: React.FC<ResponseTimesChartProps> = ({ data }) => {
+  if (!data || !data.day_wise) {
+    // Handle the case when data or day_wise is undefined
+    return (
+      <div className="chart-container">
+        <p>No data available</p>
+      </div>
+    );
+  }
+
   return (
     <div className="chart-container">
       <h2>Response Times</h2>
